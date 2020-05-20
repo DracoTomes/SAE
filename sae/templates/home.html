@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    test
+  <h1 class="mb-3">Characters by {{ user.username }} ({{ characters.total }}) </h1>
+  {% for character in characters.items %}
+  <article class="media content-section">
+    <div class="media-body">
+      <h2><a class="article-title" href="{{ url_for('main.character', character_id=character.id) }}">{{ character.character_name }}</a></h2>
+    </div>
+  </article>
+  {% endfor %}
+{% endblock content %}
